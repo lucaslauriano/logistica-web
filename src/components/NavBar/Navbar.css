@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #263238 !important;
+}
+
+.navbar-item .navbar-link {
+  color: #dd1f1f !important;
+}
+
+.navbar-item.is-tab.is-active {
+  background-color: transparent;
+  border-bottom-color: #cfd8dc !important;
+  color: #607d8b !important;
+}
+
+.navbar-item.is-tab:hover {
+  border-bottom-color: #cfd8dc;
+  color: #cfd8dc !important;
+}
+
+.navbar-item,
+.navbar-link {
+  color: #607d8b !important;
+}

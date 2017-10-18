@@ -1,0 +1,38 @@
+{
+    "freight": [
+        {
+            "id": 1,
+            "cargo":[
+                {
+                    "fridge": 6,
+                    "stove": 0,
+                    "oven": 0,
+                    "weight": 300
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "cargo":[
+                {
+                    "fridge": 6,
+                    "stove": 0,
+                    "oven": 0,
+                    "weight": 300
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "cargo":[
+                {
+                    "fridge": 6,
+                    "stove": 0,
+                    "oven": 0,
+                    "weight": 300
+                }
+            ]
+        }
+    ]
+
+}   
