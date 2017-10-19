@@ -11,7 +11,7 @@ const NavbarInstance = () => ({
           <div className="navbar-brand">
             <a className="navbar-item">Logística</a>
           </div>
-          <div className="navbar">
+          <div className="navbar container">
             <NavLink
               exact
               to="/"
@@ -33,13 +33,6 @@ const NavbarInstance = () => ({
               activeClassName="is-active"
             >
               <span>Carga</span>
-            </NavLink>
-            <NavLink
-              to="/jogo/"
-              className="navbar-item  is-tab"
-              activeClassName="is-active"
-            >
-              <span>Jogo</span>
             </NavLink>
           </div>
         </nav>

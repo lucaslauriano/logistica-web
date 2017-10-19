@@ -10,7 +10,7 @@ import Home from './components/Home/Home';
 ReactDOM.render(
   <Router basename="/">
     <App>
-      <Route path="/" exact render={props => <Home {...props} />} />
+      <Route path="/" exact render={() => <Home />} />
     </App>
   </Router>,
   document.getElementById('root')

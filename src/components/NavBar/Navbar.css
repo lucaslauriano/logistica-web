@@ -1,20 +1,30 @@
 .navbar {
   background-color: #263238 !important;
+  border-radius: 0px;
 }
 
-.navbar-item .navbar-link {
-  color: #dd1f1f !important;
+.navbar-item {
+  margin-bottom: -2px;
+  margin-top: -2px;
 }
-
 .navbar-item.is-tab.is-active {
   background-color: transparent;
   border-bottom-color: #cfd8dc !important;
   color: #607d8b !important;
+  text-decoration: none;
+  margin-bottom: -2px;
+  margin-top: -2px;
 }
-
 .navbar-item.is-tab:hover {
   border-bottom-color: #cfd8dc;
   color: #cfd8dc !important;
+  padding-top: 7px;
+  background: #37474f;
+  border-bottom-width: 3px !important;
+  padding-bottom: calc(0.5rem - 3px) !important;
+  text-decoration: none;
+  margin-bottom: -2px;
+  margin-top: -2px;
 }
 
 .navbar-item,

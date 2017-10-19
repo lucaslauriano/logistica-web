@@ -1,25 +1,38 @@
 .navbar{
 	background-color: #263238 !important;
+  border-radius: 0px;
 }
 
 .navbar-item  {
-	.navbar-link {
-		color: #dd1f1f !important;
-	}
+	margin-bottom: -2px;
+	margin-top: -2px;
 	&.is-tab{
+
 		&.is-active {
 			background-color: transparent;
 			border-bottom-color: #CFD8DC !important;
 			color: #607D8B !important;
+			text-decoration: none;
+			margin-bottom: -2px;
+			margin-top: -2px;
 		}
 		&:hover {
-			border-bottom-color: #CFD8DC;
-			color: #CFD8DC !important;
+			border-bottom-color: #cfd8dc;
+			color: #cfd8dc !important;
+			padding-top: 7px;
+			background: #37474F;
+			border-bottom-width: 3px !important;
+			padding-bottom: calc(.5rem - 3px) !important;
+			text-decoration: none;
+			margin-bottom: -2px;
+			margin-top: -2px;
 		}
-	}
   }
-
+}
   .navbar-item, .navbar-link {
 	color: #607D8B !important;
 	
   }
+
+
+  

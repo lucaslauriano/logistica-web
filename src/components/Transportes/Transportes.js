@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Table } from 'react-bootstrap';
 
 class Transportes extends Component {
   constructor(props) {
@@ -8,24 +9,41 @@ class Transportes extends Component {
   render() {
     return (
       <div>
-        <section id="intro" className="intro-section">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <h1>
-                  <img src="images/logo.png" alt="Logo" />
-                </h1>
-                <p className="slogan">
-                  Nunca mais esqueça uma série que você assistiu ou que alguém
-                  lhe indicou.
-                </p>
-              </div>
-            </div>
+        <div>
+          <h1 class="title">Transportes</h1>
+          <hr />
+          <div class="container">
+            <Table striped bordered condensed hover>
+              <thead>
+                <tr>
+                  <th>Transporte</th>
+                  <th>Geladeiras</th>
+                  <th>Fogões</th>
+                  <th>Fornos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td colSpan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </Table>
           </div>
-        </section>
-        <section>
-          <div className="container" />
-        </section>
+        </div>
       </div>
     );
   }
