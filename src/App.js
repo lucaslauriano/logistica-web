@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
-import Home from './components/Home/Home';
-import Carga from './components/Carga/Carga';
-import Transportes from './components/Transportes/Transportes';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/Layout/NavBar/NavBar';
+
+import Home from './components/Pages/Home/Home';
+import Carga from './components/Pages/Carga/Carga';
+import Transportes from './components/Pages/Transportes/Transportes';
 
 class App extends Component {
   render() {

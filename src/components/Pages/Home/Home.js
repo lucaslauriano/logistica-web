@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Panel, Button, ButtonToolbar } from 'react-bootstrap';
 
-import './Home.scss';
-import api from '../../api/api';
+import './Home.css';
+import api from '../../../api/api';
 
 class Home extends Component {
   constructor(props) {

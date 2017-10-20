@@ -1,0 +1,10 @@
+.truck {
+  border: 2px solid black;
+  background-color: #666;
+  border-radius: 4;
+  width: 400;
+  height: 100;
+  margin: 10;
+  display: inline-block;
+  position: relative;
+}

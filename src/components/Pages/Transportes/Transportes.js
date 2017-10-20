@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
-import api from '../../api/api';
+import api from '../../../api/api';
+import './Transportes.css';
 
 class Transportes extends Component {
   constructor(props) {
@@ -54,8 +54,10 @@ class Transportes extends Component {
                   <br />
                   <span>Fogão: {cargo.fridge}</span>
                   <br />
-                  <span>Fornos: {cargo.oven}</span> <br />
-                  <span>Peso Total: {cargo.weight} </span> <br />
+                  <span>Fornos: {cargo.oven}</span>
+                  <br />
+                  <span>Peso Total: {cargo.weight}</span>
+                  <br />
                 </div>
               </div>
             </div>

@@ -7,29 +7,6 @@
   background-color: transparent;
 }
 
-.navbar {
-  padding: 20px 0;
-  -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-  -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-}
-
-.navbar-brand img {
-  margin-top: -7px;
-}
-
-.top-nav-collapse {
-  padding: 0;
-}
-
-.intro-section,
-.about-section {
-  height: 100%;
-  padding-top: 150px;
-  text-align: center;
-  background: #000000;
-}
-
 .services-section {
   height: 100%;
   padding-top: 10px;
@@ -86,4 +63,8 @@
 
 .list-group-item-text {
   margin: 0 0 11px;
+}
+
+.btn-default {
+  margin-right: 10px !important;
 }
