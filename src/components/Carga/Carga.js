@@ -15,56 +15,50 @@ import {
 import './Carga.css';
 
 class Carga extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
-        <h1 class="title">Carga</h1>
+        <h1 className="title">Carga</h1>
         <hr />
-        <div class="container">
-          <form>
-            <Panel>
-              <Form horizontal>
-                <FormGroup controlId="">
-                  <Col componentClass={ControlLabel} sm={2}>
-                    Geladeiraa
-                  </Col>
-                  <Col sm={10}>
-                    <FormControl type="number" placeholder="Quantidade" />
-                  </Col>
-                </FormGroup>
+        <div className="container">
+          <Panel>
+            <Form horizontal>
+              <FormGroup controlId="">
+                <Col componentClass={ControlLabel} sm={2}>
+                  Geladeiraa
+                </Col>
+                <Col sm={10}>
+                  <FormControl type="number" placeholder="Quantidade" />
+                </Col>
+              </FormGroup>
 
-                <FormGroup controlId="">
-                  <Col componentClass={ControlLabel} sm={2}>
-                    Fogões
-                  </Col>
-                  <Col sm={10}>
-                    <FormControl type="number" placeholder="Quantidade" />
-                  </Col>
-                </FormGroup>
+              <FormGroup controlId="">
+                <Col componentClass={ControlLabel} sm={2}>
+                  Fogões
+                </Col>
+                <Col sm={10}>
+                  <FormControl type="number" placeholder="Quantidade" />
+                </Col>
+              </FormGroup>
 
-                <FormGroup controlId="">
-                  <Col componentClass={ControlLabel} sm={2}>
-                    Fornos
-                  </Col>
-                  <Col sm={10}>
-                    <FormControl type="number" placeholder="Quantidade" />
-                  </Col>
-                </FormGroup>
+              <FormGroup controlId="">
+                <Col componentClass={ControlLabel} sm={2}>
+                  Fornos
+                </Col>
+                <Col sm={10}>
+                  <FormControl type="number" placeholder="Quantidade" />
+                </Col>
+              </FormGroup>
 
-                <FormGroup>
-                  <Col smOffset={2} sm={10}>
-                    <Button bsStyle="primary" type="">
-                      Carregar
-                    </Button>
-                  </Col>
-                </FormGroup>
-              </Form>
-            </Panel>
-          </form>
+              <FormGroup>
+                <Col smOffset={2} sm={10}>
+                  <Button bsStyle="primary" type="button">
+                    Carregar
+                  </Button>
+                </Col>
+              </FormGroup>
+            </Form>
+          </Panel>
           <hr />
           <Panel>
             <Grid>
@@ -90,7 +84,9 @@ class Carga extends Component {
                 <Col xs={6} md={3}>
                   <Thumbnail src="/assets/thumbnaildiv.png" alt="">
                     <hr />
-                    <Button bsStyle="primary">Button</Button>
+                    <Button type="button" bsStyle="primary">
+                      Button
+                    </Button>
                   </Thumbnail>
                 </Col>
                 <hr />

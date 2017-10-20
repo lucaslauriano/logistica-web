@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './Navbar.css';
 
@@ -20,13 +20,7 @@ const NavbarInstance = () => ({
             >
               <span>Home</span>
             </NavLink>
-            <NavLink
-              to="/transportes"
-              className="navbar-item  is-tab"
-              activeClassName="is-active"
-            >
-              <span>Transportes</span>
-            </NavLink>
+
             <NavLink
               to="/carga"
               className="navbar-item  is-tab"

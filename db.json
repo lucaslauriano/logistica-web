@@ -1,13 +1,42 @@
 {
-    "freight": [
+    "freights": [
         {
             "id": 1,
             "cargo":[
                 {
-                    "fridge": 6,
-                    "stove": 0,
+                    "id": 1,
+                    "fridge": 3,
+                    "stove": 5,
                     "oven": 0,
-                    "weight": 300
+                    "weight": 250
+                },
+                {
+                    "id": 2,
+                    "fridge": 3,
+                    "stove": 5,
+                    "oven": 0,
+                    "weight": 250
+                },
+                {
+                    "id": 3,
+                    "fridge": 3,
+                    "stove": 5,
+                    "oven": 0,
+                    "weight": 250
+                },
+                {
+                    "id": 4,
+                    "fridge": 3,
+                    "stove": 5,
+                    "oven": 0,
+                    "weight": 250
+                },
+                {
+                    "id": 5,
+                    "fridge": 3,
+                    "stove": 5,
+                    "oven": 0,
+                    "weight": 250
                 }
             ]
         },
@@ -15,6 +44,7 @@
             "id": 2,
             "cargo":[
                 {
+                    "id": 1,
                     "fridge": 6,
                     "stove": 0,
                     "oven": 0,
@@ -26,6 +56,7 @@
             "id": 3,
             "cargo":[
                 {
+                    "id": 1,
                     "fridge": 6,
                     "stove": 0,
                     "oven": 0,

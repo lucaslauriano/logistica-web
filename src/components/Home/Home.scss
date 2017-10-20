@@ -1,87 +1,72 @@
 .navbar-default {
     background-color: #000;
-    .navbar-nav > li > a {
-      &:focus, &:hover {
-        color: #b5b5b5;
-        background-color: transparent;
-      }
+    .navbar-nav>li>a {
+        &:focus,
+        &:hover {
+            color: #b5b5b5;
+            background-color: transparent;
+        }
     }
-  }
-  
- .navbar {
-    padding: 20px 0;
-    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    transition: background .5s ease-in-out,padding .5s ease-in-out;
-  }
-  .navbar-brand img {
-    margin-top: -7px;
-  }
-  .top-nav-collapse {
-    padding: 0;
-  }
-  .intro-section, .about-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #000000;
-  }
-  
-  .services-section {
+}
+
+.services-section {
     height: 100%;
     padding-top: 10px;
     text-align: center;
     background: #000000;
-  }
-  
-  .contact-section {
+}
+
+.contact-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: #000000;
-  }
-  
-  .thumbnail {
+}
+
+.thumbnail {
     margin-bottom: 20px;
     padding: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
     margin-bottom: 0px;
-  }
-  
-  .item.list-group-item {
+}
+
+.item.list-group-item {
     float: none;
     width: 100%;
     background-color: #000000;
     margin-bottom: 10px;
-    &:nth-of-type(odd):hover, &:hover {
-      background: #428bca;
+    &:nth-of-type(odd):hover,
+    &:hover {
+        background: #428bca;
     }
     .list-group-image {
-      margin-right: 10px;
+        margin-right: 10px;
     }
-  
     .caption {
-      padding: 9px 9px 0px 9px;
+        padding: 9px 9px 0px 9px;
     }
     &:nth-of-type(odd) {
-      background: #eeeeee;
+        background: #eeeeee;
     }
-    &:before, &:after {
-      display: table;
-      content: " ";
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
     }
     img {
-      float: left;
+        float: left;
     }
     &:after {
-      clear: both;
+        clear: both;
     }
-  }
-  
-  .list-group-item-text {
+}
+
+.list-group-item-text {
     margin: 0 0 11px;
-  }
-  
- 
+}
+
+.btn-default {
+     margin-right: 10px !important;
+}

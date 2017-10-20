@@ -1,33 +1,49 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Panel, Button, ButtonToolbar } from 'react-bootstrap';
+
 import './Home.scss';
+import api from '../../api/api';
 
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      freights: [],
+      isLoading: false
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ isLoading: true });
+
+    api
+      .loadFreight('freights')
+      .then(res => this.setState({ isLoading: false, freights: res.data }));
+  }
+
+  renderFreights(freights) {
+    return (
+      <Link key={freights.id} to={`/transportes/${freights.id}`}>
+        <Button type="button" className="btn-series btn btn-default">
+          Carregamento nº: {freights.id}
+        </Button>
+      </Link>
+    );
   }
 
   render() {
     return (
       <div>
-        <section id="intro" className="intro-section">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <h1>
-                  <img src="images/logo.png" alt="Logo" />
-                </h1>
-                <p className="slogan">
-                  Nunca mais esqueça uma série que você assistiu ou que alguém
-                  lhe indicou.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section>
-          <div className="container" />
-        </section>
+        <h1 className="title">Home</h1>
+        <hr />
+        <div className="container">
+          <Panel>
+            <ButtonToolbar>
+              {this.state.freights.map(this.renderFreights)}
+            </ButtonToolbar>
+          </Panel>
+        </div>
       </div>
     );
   }

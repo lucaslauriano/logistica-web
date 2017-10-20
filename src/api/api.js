@@ -1,23 +1,17 @@
 import axios from 'axios';
 
-const api = axios.create({
+const rest = axios.create({
   baseURL: 'http://localhost:4000/'
 });
 
-export const loadGenres = () => api.get('genres');
-export const saveSeries = newSeries => api.post('series', newSeries);
-export const updateSeries = series => api.put('series/' + series.id, series);
-export const deleteSeries = id => api.delete('series/' + id);
-export const loadSeriesById = id => api.get('series/' + id);
-export const loadSeriesByGenre = genre => api.get('series?genre=' + genre);
+export const loadFreight = () => rest.get('freights');
+export const loadFreightById = id => rest.get('freights/' + id);
+export const loadFreightByCarga = id => api.get('series?id=' + id);
 
-const apis = {
-  loadGenres,
-  saveSeries,
-  updateSeries,
-  deleteSeries,
-  loadSeriesById,
-  loadSeriesByGenre
+const api = {
+  loadFreight,
+  loadFreightById,
+  loadFreightByCarga
 };
 
-export default apis;
+export default api;

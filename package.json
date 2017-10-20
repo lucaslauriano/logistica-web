@@ -11,6 +11,7 @@
     "prettier": "^1.7.4",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
+    "react-bootstrap-table": "^4.1.0",
     "react-dom": "^16.0.0",
     "react-drag-and-drop": "^2.4.0",
     "react-drag-drop-container": "^4.0.1",
