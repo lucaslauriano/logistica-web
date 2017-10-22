@@ -10,74 +10,7 @@ class Truck extends Component {
     super(props);
 
     this.state = {
-      items: [],
-      trucks: [
-        {
-          id: 1
-        },
-        {
-          id: 2
-        },
-        {
-          id: 3
-        },
-        {
-          id: 5
-        },
-        {
-          id: 6
-        },
-        {
-          id: 7
-        },
-        {
-          id: 8
-        }
-      ],
-      produtcs: [
-        {
-          id: 1,
-          nome: 'fridge',
-          label: 'Geladeiras',
-          weight: 50
-        },
-        {
-          id: 2,
-          nome: 'stove',
-          label: 'Fogão',
-          weight: 50
-        },
-        {
-          id: 3,
-          nome: 'oven',
-          label: 'Forno',
-          weight: 50
-        },
-        {
-          id: 5,
-          nome: 'fridge',
-          label: 'Geladeiras',
-          weight: 50
-        },
-        {
-          id: 6,
-          nome: 'oven',
-          label: 'Forno',
-          weight: 50
-        },
-        {
-          id: 7,
-          nome: 'oven',
-          label: 'Forno',
-          weight: 50
-        },
-        {
-          id: 8,
-          nome: 'fridge',
-          label: 'Geladeiras',
-          weight: 50
-        }
-      ]
+      items: []
     };
 
     console.log('TRUCK PROPS', props);

@@ -23,7 +23,6 @@ class ProductToLoad extends Component {
         returnToBase={true}
         dragData={items}
         customDragElement={this.props.customDragElement}
-        customDragElement={this.props.customDragElement}
         onDragStart={() => console.log('start')}
         onDrag={() => console.log('dragging')}
         onDragEnd={() => console.log('end')}

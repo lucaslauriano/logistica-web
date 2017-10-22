@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Panel, Button, ButtonToolbar } from 'react-bootstrap';
+import { Panel, Button, ButtonToolbar, Grid } from 'react-bootstrap';
 
 import './Home.css';
 import api from '../../../api/api';
@@ -33,17 +33,19 @@ class Home extends Component {
   }
 
   render() {
+    const title = <h3>Carregamentos</h3>;
+
     return (
       <div>
-        <h1 className="title">Home</h1>
+        <h1 className="title">Home </h1>
         <hr />
-        <div className="container">
-          <Panel>
+        <Grid bsStyle=" container">
+          <Panel header={title} bsStyle="primary">
             <ButtonToolbar>
               {this.state.freights.map(this.renderFreights)}
             </ButtonToolbar>
           </Panel>
-        </div>
+        </Grid>
       </div>
     );
   }

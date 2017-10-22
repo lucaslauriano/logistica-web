@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  Form,
-  Panel,
-  Col,
-  Button
-} from 'react-bootstrap';
-
 import _ from 'lodash';
+import { Form, Panel } from 'react-bootstrap';
+
 import './Expedition.css';
+import api from '../../../../api/api';
+import ButtonAdd from '../../../common/ButtonAdd/ButtonAdd';
+import InputQtd from '../../../common/InputQtd/InputQtd';
 
 const truckWeight = 300;
 
@@ -24,6 +19,7 @@ class Expedition extends Component {
       isLoading: false,
       redirect: false,
       truckWeight: 300,
+      weight: '',
       truck: 1,
       viagem: 0
     };
@@ -31,7 +27,7 @@ class Expedition extends Component {
     this.hasTruck = this.hasTruck.bind(this);
     this.loadTruck = this.loadTruck.bind(this);
     this.getItemWeight = this.getItemWeight.bind(this);
-    this.getTotalWeght = this.getTotalWeght.bind(this);
+    this.getTotalWeight = this.getTotalWeight.bind(this);
   }
 
   componentDidMount() {
@@ -40,19 +36,11 @@ class Expedition extends Component {
 
   getItemWeight(key, value) {
     let weight;
-
-    if (key === 'fridge') {
-      weight = value * 50;
-    } else if (key === 'stove') {
-      weight = value * 20;
-    } else if (key === 'oven') {
-      weight = value * 15;
-    }
-
+    weight = api.getItemWeight(key, value);
     return weight;
   }
 
-  getTotalWeght(data, weight, method) {
+  getTotalWeight(data, weight, method) {
     _.forIn(data, function(value, key) {
       weight = weight + method(key, value);
     });
@@ -74,7 +62,7 @@ class Expedition extends Component {
     let allTruck = 1;
     let a;
 
-    totalWeight = this.getTotalWeght(
+    totalWeight = this.getTotalWeight(
       totalCargo,
       totalWeight,
       this.getItemWeight
@@ -90,10 +78,12 @@ class Expedition extends Component {
 
   loadTruck() {
     const totalCargo = {
-      fridge: this.inputFridge.value,
-      stove: this.inputStove.value,
-      oven: this.inputOven.value
+      fridge: this.inputFridge.inputRef.value,
+      stove: this.inputStove.inputRef.value,
+      oven: this.inputOven.inputRef.value
     };
+
+    console.log(totalCargo.fridge);
 
     this.setState({
       isLoading: false,
@@ -105,53 +95,11 @@ class Expedition extends Component {
     return (
       <Panel bsStyle="container">
         <Form horizontal>
-          <FormGroup controlId="">
-            <Col componentClass={ControlLabel} sm={2}>
-              Geladeiraa
-            </Col>
-            <Col sm={10}>
-              <FormControl
-                inputRef={fridge => (this.inputFridge = fridge)}
-                type="number"
-                placeholder="Quantidade"
-              />
-            </Col>
-          </FormGroup>
-
-          <FormGroup controlId="">
-            <Col componentClass={ControlLabel} sm={2}>
-              Fogões
-            </Col>
-            <Col sm={10}>
-              <FormControl
-                inputRef={stove => (this.inputStove = stove)}
-                type="number"
-                placeholder="Quantidade"
-              />
-            </Col>
-          </FormGroup>
-
-          <FormGroup controlId="">
-            <Col componentClass={ControlLabel} sm={2}>
-              Fornos
-            </Col>
-            <Col sm={10}>
-              <FormControl
-                inputRef={oven => (this.inputOven = oven)}
-                type="number"
-                placeholder="Quantidade"
-              />
-            </Col>
-          </FormGroup>
-
-          <FormGroup>
-            <Col smOffset={2} sm={10}>
-              <Button bsStyle="primary" onClick={this.loadTruck} type="button">
-                Carregar
-              </Button>
-            </Col>
-          </FormGroup>
+          <InputQtd label="Geladeira" ref={ref => (this.inputFridge = ref)} />
+          <InputQtd label="Fogão" ref={ref => (this.inputStove = ref)} />
+          <InputQtd label="Forno" ref={ref => (this.inputOven = ref)} />
         </Form>
+        <ButtonAdd className="button-mg-bottom" loadTruck={this.loadTruck} />
       </Panel>
     );
   }

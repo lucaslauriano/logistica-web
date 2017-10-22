@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
+import {
+  Panel,
+  Grid,
+  Row,
+  Thumbnail,
+  Col,
+  ListGroup,
+  ListGroupItem
+} from 'react-bootstrap';
 
-import api from '../../../api/api';
 import './Transportes.css';
+import api from '../../../api/api';
 
 class Transportes extends Component {
   constructor(props) {
@@ -40,44 +49,34 @@ class Transportes extends Component {
   }
 
   renderCargo(cargo) {
+    const title = <h3 className="truck-title">Caminhão {cargo.id}</h3>;
     return (
-      <div key={cargo.id}>
-        <div className="item  col-xs-4 col-lg-4">
-          <div className="thumbnail">
-            <div className="caption">
-              <h4 className="group inner list-group-item-heading">
-                Caminhão {cargo.id}
-              </h4>
-              <div className="row">
-                <div className="col-xs-12 col-md-6">
-                  <span>Geladeiras: {cargo.stove}</span>
-                  <br />
-                  <span>Fogão: {cargo.fridge}</span>
-                  <br />
-                  <span>Fornos: {cargo.oven}</span>
-                  <br />
-                  <span>Peso Total: {cargo.weight}</span>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Col xs={2} md={2}>
+        <Thumbnail>
+          <h1>{title}</h1>
+          <ListGroup>
+            <ListGroupItem>Geladeiras: {cargo.stove}</ListGroupItem>
+            <ListGroupItem>Fogão: {cargo.fridge}</ListGroupItem>
+            <ListGroupItem>Fornos: {cargo.oven}</ListGroupItem>
+            <ListGroupItem>Peso Total {cargo.weight} kg</ListGroupItem>
+          </ListGroup>
+        </Thumbnail>
+      </Col>
     );
   }
 
-  render() {
+  render(cargo) {
+    const title = <h3>Carregamento {this.props.match.params.id}</h3>;
+
     return (
       <div>
-        <h1 className="title">Transportes</h1>
+        <h1 className="title">Transportes </h1>
         <hr />
-        <h2>Carga {this.props.match.params.id}</h2>
-        <div className="container">
-          <div id="series" className="row list-group">
-            {this.state.cargo.map(this.renderCargo)}
-          </div>
-        </div>
+        <Grid bsStyle=" container">
+          <Panel header={title} bsStyle="primary">
+            <Row>{this.state.cargo.map(this.renderCargo)}</Row>
+          </Panel>
+        </Grid>
       </div>
     );
   }

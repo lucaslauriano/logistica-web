@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Panel, Grid, Row } from 'react-bootstrap';
+import { Panel, Grid } from 'react-bootstrap';
 
 import Factory from './Factory/Factory';
 import Expedition from './Expedition/Expedition';
 
 import './Carga.css';
-
-const dados = {
-  allTruck: 4
-};
 
 class Carga extends Component {
   constructor(props) {
@@ -23,26 +19,25 @@ class Carga extends Component {
   }
 
   render() {
-    const { expedition, factory } = this.props;
+    const titleNew = <h3>Novo Carregamento</h3>;
 
-    console.log('carga->expedition', { expedition });
-    console.log('carga->factory', { factory });
+    const titleExpedition = <h3>Expedição</h3>;
 
     return (
       <div>
         <h1 className="title">Carga </h1>
         <hr />
-        <Panel bsClass={'container'}>
-          <Expedition {...expedition} />
-        </Panel>
+        <Grid bsStyle=" container">
+          <Panel header={titleNew} bsStyle="primary">
+            <Expedition />
+          </Panel>
+        </Grid>
         <hr />
-        <Panel bsClass={'container'}>
-          <Grid>
-            <Row>
-              <Factory {...factory} />
-            </Row>
-          </Grid>
-        </Panel>
+        <Grid bsStyle=" container">
+          <Panel header={titleExpedition} bsStyle="primary">
+            <Factory />
+          </Panel>
+        </Grid>
       </div>
     );
   }

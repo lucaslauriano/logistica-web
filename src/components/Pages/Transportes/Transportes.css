@@ -1,1 +1,16 @@
+.panel {
+  margin-bottom: 0px;
+}
 
+.panel-primary {
+  border-color: #263238;
+}
+.panel-primary .panel-heading {
+  color: #607d8b;
+  background-color: #212f36;
+  border-color: #263238;
+}
+
+.truck-title {
+  padding: 4px;
+}

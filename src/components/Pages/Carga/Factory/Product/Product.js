@@ -29,6 +29,7 @@ class Product extends Component {
     this.unHighlight();
 
     this.props.changeTruck(e.dragData.index, this.props.index, e.dragData);
+
     console.log(e.dragData.index, this.props.index, e.dragData);
     e.sourceElem.style.visibility = 'hidden';
   };
@@ -44,6 +45,7 @@ class Product extends Component {
       index: this.props.children.index
     };
 
+    console.log('aaaaaaaaaaaaaaaaaaa: ', this.props.children);
     return (
       <DragDropContainer
         targetKey={items.index}

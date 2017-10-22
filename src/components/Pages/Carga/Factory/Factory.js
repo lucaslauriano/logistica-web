@@ -20,7 +20,7 @@ class Factory extends Component {
         },
         {
           id: 3
-        },
+        } /* ,
         {
           id: 5
         },
@@ -32,7 +32,7 @@ class Factory extends Component {
         },
         {
           id: 8
-        }
+        } */
       ],
       produtcs: [
         {

@@ -33,3 +33,27 @@
 .navbar-link {
     color: #607D8B !important;
 }
+
+
+  a.navbar-item {
+    &.is-active, &:hover {
+        background-color: #f5f5f500;
+       
+    }
+  }
+
+  .navbar-link {
+    &.is-active, &:hover {
+        background-color: #37474F;
+        color: #ffffff !important;
+        text-decoration: none;
+    }
+  }
+  
+  a.navbar-item {
+    &.is-active, &:hover {
+        background-color: #37474F;
+        color: #ffffff !important;
+        text-decoration: none;
+    }
+  }
