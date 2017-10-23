@@ -1,0 +1,18 @@
+{
+    "editor.tabCompletion": true,
+    "editor.matchBrackets": true,
+    "editor.tabSize": 4,
+    "[yaml]":  {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.tabSize": 4,
+        "editor.detectIndentation": true,
+        "editor.autoIndent": true,
+        "editor.autoClosingBrackets": true,
+        "editor.insertSpaces": true
+    },
+    "editor.renderWhitespace": "none",
+    "editor.detectIndentation": true
+}

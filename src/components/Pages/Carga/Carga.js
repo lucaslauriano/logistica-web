@@ -97,16 +97,14 @@ class Carga extends Component {
     this.clearInputs();
 
     this.setState({
-      isLoading: false,
       cargo: this.getCargo(cargo, newCargo)
     });
 
-    console.log(this.getCargo(cargo, newCargo));
-
-    return this.getCargo(cargo, newCargo);
+    let cargos = this.getCargo(cargo, newCargo);
+    console.log(cargos);
   }
 
-  render() {
+  render(cargo) {
     const titleNew = 'Novo Carregamento';
     const titleExpedition = <h3>Expedição</h3>;
 
@@ -133,7 +131,7 @@ class Carga extends Component {
         <hr />
         <Grid bsStyle=" container">
           <Panel header={titleExpedition} bsStyle="primary">
-            <Factory {...this.state.cargo} loadTruck={this.loadTruck} />
+            <Factory cargo={cargo} loadTruck={this.loadTruck} />
           </Panel>
         </Grid>
       </div>

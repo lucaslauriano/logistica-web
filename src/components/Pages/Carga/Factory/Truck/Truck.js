@@ -14,55 +14,14 @@ class Truck extends Component {
 
     this.state = {
       items: [
-        {
-          id: 1,
-          idTruck: '1',
-          nome: 'fridge',
-          label: 'Geladeiras',
-          weight: 50
-        },
-        {
-          id: 2,
-          idTruck: '1',
-          nome: 'stove',
-          label: 'Fogão',
-          weight: 50
-        },
-        {
-          id: 3,
-          idTruck: '1',
-          nome: 'oven',
-          label: 'Forno',
-          weight: 50
-        },
-        {
-          id: 5,
-          idTruck: '1',
-          nome: 'fridge',
-          label: 'Geladeiras',
-          weight: 50
-        },
-        {
-          id: 6,
-          idTruck: '2',
-          nome: 'oven',
-          label: 'Forno',
-          weight: 50
-        },
-        {
-          id: 7,
-          idTruck: '2',
-          nome: 'oven',
-          label: 'Forno',
-          weight: 50
-        },
-        {
-          id: 8,
-          idTruck: '2',
-          nome: 'fridge',
-          label: 'Geladeiras',
-          weight: 50
-        }
+        { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 1 },
+        { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 2 },
+        { label: 'Fogão', nome: 'stove', weight: 20, idTruck: 1, id: 3 },
+        { label: 'Fogão', nome: 'stove', weight: 20, idTruck: 1, id: 4 },
+        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 5 },
+        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 6 },
+        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 7 },
+        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 8 }
       ]
     };
 
@@ -108,7 +67,7 @@ class Truck extends Component {
 
   render() {
     let items = {
-      label: this.props.children.label,
+      label: this.props.label,
       nome: this.props.nome,
       weight: this.props.weight,
       idTruck: this.props.idTruck,

@@ -38,7 +38,7 @@ class Home extends Component {
 
     return (
       <div>
-        <h1 className="title">Home </h1>
+        <h1 className="title">Home</h1>
         <hr />
         <Grid bsStyle=" container">
           <Panel header={title} bsStyle="primary">

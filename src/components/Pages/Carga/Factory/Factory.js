@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Panel } from 'react-bootstrap';
-/* import Shortid from 'shortid'; */
+import Shortid from 'shortid';
 
 import './Factory.css';
 import Truck from './Truck/Truck';
@@ -10,10 +10,31 @@ class Factory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cargo: this.props
+      cargo: [
+        {
+          idTruck: Shortid.generate(),
+          fridge: 4,
+          stove: 4,
+          oven: 4,
+          weight: 340
+        },
+        {
+          idTruck: Shortid.generate(),
+          fridge: 4,
+          stove: 4,
+          oven: 4,
+          weight: 340
+        }
+      ]
     };
 
-    console.log('factpry', this.state.cargo, this.props);
+    console.log('FACTORY', this.state.cargo, this.props, this, props);
+  }
+
+  componentDidMount() {
+    /*  this.setState({cargo: ['1']  });
+        let a = this.props.loadTruck();
+        console.log('AAAAAA', a) */
   }
 
   render() {
@@ -28,7 +49,3 @@ class Factory extends Component {
 }
 
 export default Factory;
-
-Factory.propTypes = {
-  allTruck: PropTypes.number
-};
