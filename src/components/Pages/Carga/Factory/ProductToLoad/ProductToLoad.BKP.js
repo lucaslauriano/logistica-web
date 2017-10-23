@@ -6,9 +6,6 @@ import './ProductToLoad.css';
 class ProductToLoad extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      highlighted: false
-    };
   }
 
   render() {

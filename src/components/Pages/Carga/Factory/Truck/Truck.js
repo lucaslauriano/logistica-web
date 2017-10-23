@@ -1,90 +1,145 @@
 import React, { Component } from 'react';
-import Shortid from 'shortid';
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 import { Thumbnail } from 'react-bootstrap';
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+
 import './Truck.css';
 import Product from '../Product/Product';
+import TruckService from './Truck.service.js';
 
 class Truck extends Component {
   constructor(props) {
     super(props);
 
+    console.log('TRUCK', this, props);
+
     this.state = {
-      items: []
+      items: [
+        {
+          id: 1,
+          idTruck: '1',
+          nome: 'fridge',
+          label: 'Geladeiras',
+          weight: 50
+        },
+        {
+          id: 2,
+          idTruck: '1',
+          nome: 'stove',
+          label: 'Fogão',
+          weight: 50
+        },
+        {
+          id: 3,
+          idTruck: '1',
+          nome: 'oven',
+          label: 'Forno',
+          weight: 50
+        },
+        {
+          id: 5,
+          idTruck: '1',
+          nome: 'fridge',
+          label: 'Geladeiras',
+          weight: 50
+        },
+        {
+          id: 6,
+          idTruck: '2',
+          nome: 'oven',
+          label: 'Forno',
+          weight: 50
+        },
+        {
+          id: 7,
+          idTruck: '2',
+          nome: 'oven',
+          label: 'Forno',
+          weight: 50
+        },
+        {
+          id: 8,
+          idTruck: '2',
+          nome: 'fridge',
+          label: 'Geladeiras',
+          weight: 50
+        }
+      ]
     };
 
-    console.log('TRUCK PROPS', props);
-    console.log('TRUCK THIS', this);
+    this.kill = this.kill.bind(this);
+    this.loadInTruck = this.loadInTruck.bind(this);
+    this.changeTruck = this.changeTruck.bind(this);
   }
 
-  loadInTruck = e => {
+  loadInTruck(e) {
     let items = this.state.items.slice();
+    let newItems = TruckService.loadInTruck(e, items);
+    this.setState({ items: newItems });
 
-    items.push({
-      label: e.dragData.label,
-      nome: e.dragData.nome,
-      weight: e.dragData.weight,
-      uid: Shortid.generate()
-    });
+    console.log('1 - loadInTruck: ', newItems);
+    console.log('2 - loadInTruck: ', items);
+  }
 
-    this.setState({ items: items });
-
-    e.sourceElem.style.visibility = 'hidden';
-
-    console.log(e, 'loadInTruck E: ', items);
-  };
-
-  changeTruck = (fromIndex, toIndex, dragData) => {
+  changeTruck(fromIndex, toIndex, dragData) {
     let items = this.state.items.slice();
-    const item = {
-      label: dragData.label,
-      nome: dragData.nome,
-      weight: dragData.weight,
-      uid: Shortid.generate()
-    };
+    const item = TruckService.changeTruck(dragData);
     items.splice(toIndex, 0, item);
     this.setState({ items: items });
 
-    console.log('Trocando de Caminhão: ', { dragData }, items, item);
-  };
+    console.log('Trocando de Caminhão: ', fromIndex, toIndex, { dragData });
+    console.log('Trocando de Caminhão: ', items);
+    console.log('Trocando de Caminhão: ', item);
+  }
 
-  kill = uid => {
+  kill(id) {
     let items = this.state.items.slice();
+
     const index = items.findIndex(item => {
-      return item.uid === uid;
+      return item.id === id;
     });
+
     if (index !== -1) {
       items.splice(index, 1);
     }
-    this.setState({ items: items });
 
-    console.log('KILL: ', uid, items, index);
-  };
+    this.setState({ items: items });
+    console.log('KILL', index);
+  }
 
   render() {
     let items = {
-      label: this.props.label
+      label: this.props.children.label,
+      nome: this.props.nome,
+      weight: this.props.weight,
+      idTruck: this.props.idTruck,
+      id: this.props.id
     };
-    // DropTarget aninhados para Permitir manipular itens descartados de fora e
-    // itens arrastados entre Caminhões.
+
+    console.log(items);
+
     return (
       <DragDropContainer dragHandleClassName="grab_me">
         <DropTarget
           onHit={this.loadInTruck}
-          targetKey={this.props.targetKey}
+          targetKey={this.props.target}
           dropData={items}
         >
           <DropTarget
             onHit={this.loadInTruck}
-            targetKey={items.uid}
+            targetKey={items.idTruck}
             dropData={items}
           >
-            <Thumbnail style={{ float: 'left' }} className="truck">
+            <Thumbnail
+              style={{
+                float: 'left'
+              }}
+              className="truck"
+            >
               {this.state.items.map((item, index) => {
                 return (
                   <Product
-                    key={item.uid}
-                    uid={item.uid}
+                    key={item.id}
+                    id={item.id}
                     kill={this.kill}
                     index={index}
                     changeTruck={this.changeTruck}

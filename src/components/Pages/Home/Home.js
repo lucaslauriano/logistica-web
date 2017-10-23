@@ -8,6 +8,7 @@ import api from '../../../api/api';
 class Home extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       freights: [],
       isLoading: false
@@ -33,7 +34,7 @@ class Home extends Component {
   }
 
   render() {
-    const title = <h3>Carregamentos</h3>;
+    const title = <h1>Carregamentos</h1>;
 
     return (
       <div>

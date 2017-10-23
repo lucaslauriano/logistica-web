@@ -33,32 +33,29 @@ class Transportes extends Component {
   loadData() {
     this.setState({ isLoading: true });
 
-    api.loadFreight('freights').then(res =>
-      this.setState({
-        isLoading: false,
-        freights: res.data
-      })
-    );
+    api
+      .loadFreight('freights')
+      .then(res => this.setState({ isLoading: false, freights: res.data }));
 
-    api.loadFreightById(this.props.match.params.id).then(res =>
-      this.setState({
-        isLoading: false,
-        cargo: res.data.cargo
-      })
-    );
+    api
+      .loadFreightById(this.props.match.params.id)
+      .then(res => this.setState({ isLoading: false, cargo: res.data.cargo }));
   }
 
   renderCargo(cargo) {
-    const title = <h3 className="truck-title">Caminhão {cargo.id}</h3>;
+    const title = <span className="truck-title">Caminhão {cargo.id}</span>;
     return (
-      <Col xs={2} md={2}>
+      <Col key={cargo.id} xs={2} md={2}>
         <Thumbnail>
           <h1>{title}</h1>
           <ListGroup>
             <ListGroupItem>Geladeiras: {cargo.stove}</ListGroupItem>
             <ListGroupItem>Fogão: {cargo.fridge}</ListGroupItem>
             <ListGroupItem>Fornos: {cargo.oven}</ListGroupItem>
-            <ListGroupItem>Peso Total {cargo.weight} kg</ListGroupItem>
+            <ListGroupItem>
+              Peso Total {cargo.weight}
+              kg
+            </ListGroupItem>
           </ListGroup>
         </Thumbnail>
       </Col>
@@ -70,7 +67,7 @@ class Transportes extends Component {
 
     return (
       <div>
-        <h1 className="title">Transportes </h1>
+        <h1 className="title">Transportes</h1>
         <hr />
         <Grid bsStyle=" container">
           <Panel header={title} bsStyle="primary">

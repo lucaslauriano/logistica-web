@@ -10,47 +10,40 @@ class Product extends Component {
     this.state = {
       highlighted: false
     };
-
-    this.deleteMe = this.deleteMe.bind(this);
-    this.handleDrop = this.handleDrop.bind(this);
-    this.unHighlight = this.unHighlight.bind(this);
-    this.highlight = this.highlight.bind(this);
   }
 
-  highlight() {
-    this.setState({ highlighted: false });
-  }
-
-  unHighlight() {
+  highlight = () => {
     this.setState({ highlighted: true });
-  }
+  };
 
-  handleDrop(e) {
+  unHighlight = () => {
+    this.setState({ highlighted: false });
+  };
+
+  handleDrop = e => {
     e.stopPropagation();
     this.unHighlight();
     this.props.changeTruck(e.dragData.index, this.props.index, e.dragData);
     e.sourceElem.style.visibility = 'hidden';
-  }
+  };
 
-  deleteMe() {
-    this.props.kill(this.props.id);
-  }
+  deleteMe = () => {
+    this.props.kill(this.props.uid);
+  };
 
   render() {
     let items = {
       label: this.props.children.label,
       nome: this.props.children.nome,
-      idTruck: this.props.children.idTruck,
       index: this.props.children.index
     };
 
     return (
       <DragDropContainer
-        targetKey={this.props.targetKey}
-        returnToBase
+        targetKey={items.index}
+        returnToBase={true}
         dragData={items}
         onDrop={this.deleteMe}
-        customDragElement={this.props.customDragElement}
       >
         <DropTarget
           onHit={this.handleDrop}
