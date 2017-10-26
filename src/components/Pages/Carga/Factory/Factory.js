@@ -1,48 +1,58 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Panel } from 'react-bootstrap';
+import { Panel, ButtonToolbar } from 'react-bootstrap';
 import Shortid from 'shortid';
 
 import './Factory.css';
 import Truck from './Truck/Truck';
-
+import ButtonAdd from '../../../common/ButtonAdd/ButtonAdd';
 class Factory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cargo: [
-        {
-          idTruck: Shortid.generate(),
-          fridge: 4,
-          stove: 4,
-          oven: 4,
-          weight: 340
-        },
-        {
-          idTruck: Shortid.generate(),
-          fridge: 4,
-          stove: 4,
-          oven: 4,
-          weight: 340
-        }
-      ]
+      cargo: [],
+      isLoaded: false
     };
-
-    console.log('FACTORY', this.state.cargo, this.props, this, props);
+    this.getCargo = this.getCargo.bind(this);
+    this.saveCargo = this.saveCargo.bind(this);
+    this.reLoadTruck = this.reLoadTruck.bind(this);
   }
 
   componentDidMount() {
-    /*  this.setState({cargo: ['1']  });
-        let a = this.props.loadTruck();
-        console.log('AAAAAA', a) */
+    this.setState({ isLoaded: true });
+  }
+
+  getCargo(cargo) {
+    return <Truck key={cargo.idTruck} data={cargo} target={cargo.idTruck} />;
+  }
+  saveCargo(cargo) {
+    alert('Salvando');
+  }
+  reLoadTruck(cargo) {
+    alert('Reorganizando');
   }
 
   render() {
+    let cargo = this.props.cargo;
+    console.log('getCargo', cargo);
     return (
       <Panel>
-        {this.state.cargo.map(cargo => (
-          <Truck key={cargo.idTruck} target={cargo.idTruck} />
-        ))}
+        {cargo.map(this.getCargo)}
+        <hr />
+        <ButtonToolbar>
+          <ButtonAdd
+            btnStyle="success"
+            btnLabel="Salvar"
+            className="button-mg-bottom"
+            method={this.saveCargo}
+          />
+          <ButtonAdd
+            btnStyle="default"
+            btnLabel="Reorganizar"
+            className="button-mg-bottom"
+            method={this.reLoadTruck}
+          />
+        </ButtonToolbar>
       </Panel>
     );
   }

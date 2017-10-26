@@ -62,7 +62,7 @@ class Transportes extends Component {
     );
   }
 
-  render(cargo) {
+  render() {
     const title = <h3>Carregamento {this.props.match.params.id}</h3>;
 
     return (

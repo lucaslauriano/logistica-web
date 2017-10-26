@@ -1,3 +1,11 @@
+.btn-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
 .button-mg-bottom {
   margin-bottom: 0px;
+}
+.button-mg-bottom .btn {
+  margin: 5px;
 }

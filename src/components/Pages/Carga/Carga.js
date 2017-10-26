@@ -24,9 +24,7 @@ class Carga extends Component {
     this.getWeightByTruck = this.getWeightByTruck.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
-  }
+  componentDidMount() {}
 
   getAllTruck(totalCargo) {
     let totalWeight = 0;
@@ -80,7 +78,7 @@ class Carga extends Component {
       oven: this.inputOven.inputRef.value
     };
 
-    const cargo = {
+    const a = {
       fridge: parseInt(totalCargo.fridge, 10) || 0,
       stove: parseInt(totalCargo.stove, 10) || 0,
       oven: parseInt(totalCargo.oven, 10) || 0,
@@ -89,19 +87,18 @@ class Carga extends Component {
     };
 
     newCargo.push({
-      fridge: expeditionService.getItemByTruck(cargo.fridge, cargo.truck),
-      stove: expeditionService.getItemByTruck(cargo.stove, cargo.truck),
-      oven: expeditionService.getItemByTruck(cargo.oven, cargo.truck)
+      fridge: expeditionService.getItemByTruck(a.fridge, a.truck),
+      stove: expeditionService.getItemByTruck(a.stove, a.truck),
+      oven: expeditionService.getItemByTruck(a.oven, a.truck)
     });
 
     this.clearInputs();
 
     this.setState({
-      cargo: this.getCargo(cargo, newCargo)
+      cargo: this.getCargo(a, newCargo)
     });
 
-    let cargos = this.getCargo(cargo, newCargo);
-    console.log(cargos);
+    console.log('LAODTRUCK', this.state.cargo);
   }
 
   render(cargo) {
@@ -123,15 +120,17 @@ class Carga extends Component {
               <InputQtd label="Forno" ref={ref => (this.inputOven = ref)} />
             </Form>
             <ButtonAdd
+              btnStyle="primary"
+              btnLabel="Carregar"
               className="button-mg-bottom"
-              loadTruck={this.loadTruck}
+              method={this.loadTruck}
             />
           </Panel>
         </Grid>
         <hr />
         <Grid bsStyle=" container">
           <Panel header={titleExpedition} bsStyle="primary">
-            <Factory cargo={cargo} loadTruck={this.loadTruck} />
+            <Factory cargo={this.state.cargo} loadTruck={this.loadTruck} />
           </Panel>
         </Grid>
       </div>

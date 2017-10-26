@@ -13,15 +13,16 @@ class Truck extends Component {
     console.log('TRUCK', this, props);
 
     this.state = {
+      cargo: this.props.cargo,
       items: [
-        { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 1 },
+        /*  { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 1 },
         { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 2 },
         { label: 'Fogão', nome: 'stove', weight: 20, idTruck: 1, id: 3 },
         { label: 'Fogão', nome: 'stove', weight: 20, idTruck: 1, id: 4 },
         { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 5 },
         { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 6 },
         { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 7 },
-        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 8 }
+        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 8 } */
       ]
     };
 
@@ -67,10 +68,10 @@ class Truck extends Component {
 
   render() {
     let items = {
-      label: this.props.label,
-      nome: this.props.nome,
-      weight: this.props.weight,
-      idTruck: this.props.idTruck,
+      fridge: this.props.data.fridge,
+      oven: this.props.data.oven,
+      stove: this.props.data.stove,
+      idTruck: this.props.data.idTruck,
       id: this.props.id
     };
 
@@ -97,6 +98,7 @@ class Truck extends Component {
               {this.state.items.map((item, index) => {
                 return (
                   <Product
+                    products={items}
                     key={item.id}
                     id={item.id}
                     kill={this.kill}

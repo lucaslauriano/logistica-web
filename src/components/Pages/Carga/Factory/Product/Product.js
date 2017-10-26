@@ -39,11 +39,12 @@ class Product extends Component {
 
   render() {
     let items = {
-      label: this.props.children.label,
-      nome: this.props.children.nome,
-      weight: this.props.children.weight,
+      fridge: this.props.fridge,
+      oven: this.props.oven,
+      stove: this.props
+        .stove /* ,
       idTruck: this.props.children.idTruck,
-      index: this.props.children.index
+      index: this.props.children.index */
     };
 
     const tooltip = (

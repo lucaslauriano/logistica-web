@@ -7,11 +7,11 @@ class ButtonAdd extends Component {
       <FormGroup className="button-mg-bottom">
         <Col>
           <Button
-            bsStyle="primary"
-            onClick={() => this.props.loadTruck()}
+            bsStyle={this.props.btnStyle}
+            onClick={() => this.props.method()}
             type="button"
           >
-            Carregar
+            {this.props.btnLabel}
           </Button>
         </Col>
       </FormGroup>
