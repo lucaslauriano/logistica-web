@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { Panel, ButtonToolbar } from 'react-bootstrap';
-import Shortid from 'shortid';
+//import Shortid from 'shortid';
 
 import './Factory.css';
 import Truck from './Truck/Truck';

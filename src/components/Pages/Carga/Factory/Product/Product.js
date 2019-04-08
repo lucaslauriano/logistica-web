@@ -41,10 +41,9 @@ class Product extends Component {
     let items = {
       fridge: this.props.fridge,
       oven: this.props.oven,
-      stove: this.props
-        .stove /* ,
+      stove: this.props.stove,
       idTruck: this.props.children.idTruck,
-      index: this.props.children.index */
+      index: this.props.children.index
     };
 
     const tooltip = (

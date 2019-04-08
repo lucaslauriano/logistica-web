@@ -15,14 +15,14 @@ class Truck extends Component {
     this.state = {
       cargo: this.props.cargo,
       items: [
-        /*  { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 1 },
+        { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 1 },
         { label: 'Geladeira', nome: 'fridge', weight: 50, idTruck: 1, id: 2 },
         { label: 'Fogão', nome: 'stove', weight: 20, idTruck: 1, id: 3 },
         { label: 'Fogão', nome: 'stove', weight: 20, idTruck: 1, id: 4 },
         { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 5 },
         { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 6 },
         { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 7 },
-        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 8 } */
+        { label: 'Forno', nome: 'oven', weight: 15, idTruck: 2, id: 8 }
       ]
     };
 
